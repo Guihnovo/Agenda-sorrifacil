@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import { Button, DatePicker, Space } from 'antd';
+import { TimePicker } from 'antd';
 import './App.css';
+import moment from 'moment';
+import Home from './Pages/Form/Form';
+import HomeIcons from './Pages/Home/Home';
+import Router from './Router/router';
 
-function App() {
+export default function App (){
+
+  const [value, setValue] = useState(null);
+  const onChange = (time) => {
+    moment().format('L')
+    setValue(time);
+  };
+
+  console.log(value)
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Home/> */}
+      <Router/>
     </div>
-  );
-}
-
-export default App;
+  )}
