@@ -56,7 +56,7 @@ export default function HomeSchedule (){
             </ContainerTimePicker>
         </ContainerInput>
         <ContainerButtons>
-            <Button type="primary">Enviar agendamento.</Button>
+            <Button type="primary" style={{marginTop: '40px', fontWeight: 700}}>Enviar agendamento</Button>
             {/* <a href="tel:+44998010400" target='_blank'>conversar no whatsaap.</a> */}
             
             <PhoneWhats>

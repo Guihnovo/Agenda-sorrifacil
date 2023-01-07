@@ -9,6 +9,14 @@ import MaskInput from '../../Components/maskInput';
 import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import Agenda from '../../Assets/schedule.svg'
+import aparelho_ortodontico from '../../Assets/aparelho_ortodontico.jpg'
+import clareamento from '../../Assets/clareamento.jpg'
+import limpeza from '../../Assets/limpeza_profilaxia.jpg'
+import urgencia from '../../Assets/urgencia.jpg'
+import harmonizacao from '../../Assets/harmonizacao.jpg'
+import lentes_contato from '../../Assets/lentes_contato.jpg'
+import avaliacao from '../../Assets/avaliacao.jpg'
+import PhotosAlbum from './photos'
 
 export default function HomeIcons (){
 
@@ -18,177 +26,127 @@ export default function HomeIcons (){
       <ContainerGrid>
         <ContainerTitulo>
           <h1>O que está incomodando você?</h1>
-          
         </ContainerTitulo>
         {/* <Divider/> */}
         <ContainerCards>
-            <ContainerLink>
-                  <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#0091EF', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Avaliação de Implante</span>
-                </Link>
-                <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#E39300', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Consulta de rotina</span>
-                    <div style={{display: 'flex', justifyContent: 'end', marginRight: '25px', marginTop: '10px'}}>
-                      <img src={Agenda}></img>
-                    </div>
-                </Link>
-            </ContainerLink>
-            
-            <ContainerLink>
-              <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#0091EF', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Alinhador invisível <strong style={{color: '#555AA0'}}>Aligner</strong></span>
-                </Link>
-                <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#E39300', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Estou com dor</span>
-                </Link>
-            </ContainerLink>
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={avaliacao} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px'
+                        }}></img>
+            </StyleLink>
+          </Link>
 
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={clareamento} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px'
+                        }}></img>
+            </StyleLink>
+          </Link>
 
-            <ContainerLink>
-              <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#0091EF', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Urgência</span>
-                </Link>
-                <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#E39300', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Tratamento rápido</span>
-                </Link>
-            </ContainerLink>
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={limpeza} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px'
+                        }}></img>
+            </StyleLink>
+          </Link>
 
-            <ContainerLink>
-              <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#0091EF', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Aparelho ortodôntico</span>
-                </Link>
-                <Link to='/agenda' 
-                      style={{
-                        padding: '10px 0px 0px 15px', 
-                        border: '1px solid black', 
-                        borderRadius: '10%', 
-                        height: '90px', 
-                        border: '1px solid black', 
-                        borderRadius: '35px 35px 35px 35px', 
-                        boxShadow: '0px 0px 1px 0px black', 
-                        background: '#E39300', 
-                        color: '#FFFFFF',
-                        width: '190px',
-                        textAlign: 'start',
-                        fontWeight: '700',
-                        fontSize: '17px',
-                    }}>
-                    <span>Estou com dor</span>
-                </Link>
-            </ContainerLink>
-           
-        </ContainerCards>
-        <ContainerFooter>
-            <h4>SorriFácil</h4>
-            <a> 
-              Fotos
-            </a>
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={aparelho_ortodontico} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px'
+                        }}></img>
+            </StyleLink>
+          </Link>
+
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={urgencia} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px'
+                        }}></img>
+            </StyleLink>
+          </Link>
+
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={lentes_contato} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px',
+                        }}></img>
+            </StyleLink>
+          </Link>
+
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={harmonizacao} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px'
+                        }}></img>
+            </StyleLink>
+          </Link>
+
+          <Link to='/agenda' style={{height: '15px'}}>
+            <StyleLink>
+                    <img src={urgencia} style={{
+                          display: 'flex',
+                          width: '350px',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '67px',
+                          border: '2px solid #FFFFFF',
+                          borderRadius: '20px',
+                        }}></img>
+            </StyleLink>
+          </Link>
+
+          <ContainerFooter>
+            <PhotosAlbum></PhotosAlbum>
         </ContainerFooter>
+
+        </ContainerCards>
+        
       </ContainerGrid>
       
   )}
