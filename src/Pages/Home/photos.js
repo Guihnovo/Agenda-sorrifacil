@@ -8,7 +8,7 @@ import lavatorio from '../../Assets/fotosClinica/lavatorio.jpeg'
 import recepcao_secretaria from '../../Assets/fotosClinica/recepcao_secretaria.jpeg'
 import recepcao from '../../Assets/fotosClinica/recepcao.jpeg'
 import sala_espera from '../../Assets/fotosClinica/sala_espera.jpeg'
-
+import video from '../../Assets/video_institucional.mp4'
 
 // const PhotosAlbum = () => (
 //   <Image.PreviewGroup>
@@ -55,13 +55,15 @@ const PhotosAlbum = () => {
       <HomeOutlined style={{fontSize: '20px', marginTop: '18px'}}/><h3 style={{fontFamily: 'sans-serif', fontWeight: 700, letterSpacing: '1px', marginBottom: '12px', color: 'white'}}>Conheça a clínica</h3>
         <Image.PreviewGroup >
           <div style={{margin: '10px', padding: '10px', display: 'contents'}}>
-              <Image width={100} height={100} alt="clinica de lado" src={clinicaLado} style={{border: '2px solid white'}}/>
+              {/* <Image width={100} height={100} alt="clinica de lado" src={clinicaLado} style={{border: '2px solid white'}}/>
               <Image width={100} height={100} alt="clinica" src={clinicaLonge} style={{border: '2px solid white'}}/>
               <Image width={100} height={100} alt="consultorio" src={consultorio} style={{border: '2px solid white'}}/>
               <Image width={100} height={100} alt="lavatorio" src={lavatorio} style={{border: '2px solid white'}}/>
               <Image width={100} height={100} alt="recepcao secretaria" src={recepcao_secretaria} style={{border: '2px solid white'}}/>
               <Image width={100} height={100} alt="recepcao" src={recepcao} style={{border: '2px solid white'}}/>
               <Image width={100} height={100} alt="sala de espera" src={sala_espera} style={{border: '2px solid white'}}/>
+              <Image width={100} height={100} alt="sala de espera" src={sala_espera} style={{border: '2px solid white'}}/> */}
+              <video src={video} width="350" height="300" controls></video>
           </div>
           
         </Image.PreviewGroup>

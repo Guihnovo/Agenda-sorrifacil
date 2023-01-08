@@ -31,6 +31,26 @@ export default function HomeSchedule (){
     return undefined;
   };
 
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [date, setDate] = useState('');
+
+  const handleName = (valueName) => {
+    setName(valueName)
+  }
+
+  const handlePhone = (valuePhone) => {
+    setPhone(valuePhone)
+  }
+
+  const handleDate = (valueDate) => {
+    setDate(valueDate)
+  }
+
+  console.log('NOMEE',name);
+  console.log('phone',phone)
+  console.log('date',date)
+
   return (
       <ContainerGrid>
         <ContainerTitulo>
@@ -41,17 +61,17 @@ export default function HomeSchedule (){
 
             <ContainerName>
                 <h3>Nome</h3>
-                <Input placeholder="Digite seu nome" size='large'/>
+                <Input placeholder="Digite seu nome" size='large' value={name} onChange={(e) => handleName(e.target.value)}/>
             </ContainerName>
             <ContainerName>
                 <h3>Telefone</h3>
-                <Input placeholder="Digite seu telefone" size='large'/>
+                <Input placeholder="Digite seu telefone" size='large' value={phone} onChange={(e) => handlePhone(e.target.value)}/>
             </ContainerName>
             <ContainerTimePicker>
                 <h3>Escolha sua data e horário:</h3>
                 <Space>
                     <DatePicker locale={locale} format='DD-MM-YYYY' size='large'/>
-                    <TimePicker value={value} onChange={onChange} format='HH:mm' locale={locale} size='large' style={{width: '140px'}}/>
+                    <TimePicker value={date} onChange={() => handleDate()} format='HH:mm' locale={locale} size='large' style={{width: '140px'}}/>
                 </Space>
             </ContainerTimePicker>
         </ContainerInput>

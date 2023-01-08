@@ -17,6 +17,8 @@ import harmonizacao from '../../Assets/harmonizacao.jpg'
 import lentes_contato from '../../Assets/lentes_contato.jpg'
 import avaliacao from '../../Assets/avaliacao.jpg'
 import PhotosAlbum from './photos'
+import symbol from '../../Assets/symbol.webp';
+import symbolRead from '../../Assets/symbol_read.webp';
 
 export default function HomeIcons (){
 
@@ -25,7 +27,12 @@ export default function HomeIcons (){
   return (
       <ContainerGrid>
         <ContainerTitulo>
-          <h1>O que está incomodando você?</h1>
+          <img src={symbol}></img>
+          {/* <h1>O que está incomodando você?</h1> */}
+          <h4>Agende seu horário com rapidez e facilidade.</h4>
+          {/* <span>Os melhores dentistas estão aqui na <strong style={{fontSize: '14px'}}>Sorrifácil Souza Naves!</strong></span> */}
+          <span>Os melhores dentistas estão aqui na</span>
+          <img style={{width: '145px', height: '41px', marginBottom: '10px'}} src={symbolRead}></img>
         </ContainerTitulo>
         {/* <Divider/> */}
         <ContainerCards>
@@ -127,7 +134,7 @@ export default function HomeIcons (){
             </StyleLink>
           </Link>
 
-          <Link to='/agenda' style={{height: '15px'}}>
+          {/* <Link to='/agenda' style={{height: '15px'}}>
             <StyleLink>
                     <img src={urgencia} style={{
                           display: 'flex',
@@ -139,7 +146,7 @@ export default function HomeIcons (){
                           borderRadius: '20px',
                         }}></img>
             </StyleLink>
-          </Link>
+          </Link> */}
 
           <ContainerFooter>
             <PhotosAlbum></PhotosAlbum>

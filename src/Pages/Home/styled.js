@@ -12,15 +12,34 @@ export const ContainerTitulo = styled.div`
     
     display: flex;
     align-items: center;
+    flex-direction: column;
+    background: #E48100;
+    margin-bottom: 28px;
+    border-bottom: 1px solid white;
     /* margin-left: 20px; */
-    h1 {
+    img {
+        width: 50px;
+        height: 50px;
+        margin-top: 5px;
+    }
+
+    h4 {
         font-family: sans-serif;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 24px;
+        color: #FFFFFF;
+        text-align: center;
+        letter-spacing: 2px;
+        margin: 10px 0px 10px 15px;
+    }
+    span {
+        font-family: sans-serif;
+        font-weight: 700;
+        font-size: 12px;
         color: #FFFFFF;
         text-align: initial;
         letter-spacing: 2px;
-        margin: 40px 0px 40px 15px;
+        margin: 0px 10px 0px 10px;
     }
 `
 export const ContainerCards = styled.div`
