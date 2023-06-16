@@ -8,10 +8,9 @@
 //   service: 'Gmail',
 //   auth: {
 //     user: 'guilhermenovo22@gmail.com',
-//     pass: '32523505gg'
+//     pass: ''
 //   }
 // });
-
 // const sendEmail = (to, subject, text) => {
 //   return new Promise((resolve, reject) => {
 //     const mailOptions = {
