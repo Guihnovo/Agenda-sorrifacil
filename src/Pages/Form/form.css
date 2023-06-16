@@ -1,0 +1,8 @@
+.containerPicker input {
+    height: 40px;
+    border: 1px solid white;
+}
+
+.is-invalid {
+    border-color: red;
+}

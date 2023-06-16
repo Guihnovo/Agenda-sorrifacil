@@ -14,10 +14,6 @@ export default function App (){
     moment().format('L')
     setValue(time);
   };
-
-  console.log(value)
-  
-
   return (
     <div className="App">
       {/* <Home/> */}

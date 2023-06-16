@@ -1,159 +1,93 @@
-import React, {useState} from 'react';
-import { Button, DatePicker, Divider, Form, Input, InputNumber, Space } from 'antd';
-import { TimePicker } from 'antd';
-import moment from 'moment';
-import { ContainerGrid, ContainerInput, ContainerName, ContainerTitulo, ContainerTimePicker,ContainerButtons, PhoneWhats, ContainerFooter, ContainerCards, ContainerLink, StyleLink } from './styled';
-import locale from 'antd/es/date-picker/locale/pt_BR'
-import { Field } from 'react-final-form';
-import MaskInput from '../../Components/maskInput';
-import { PhoneOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import Agenda from '../../Assets/schedule.svg'
-import aparelho_ortodontico from '../../Assets/aparelho_ortodontico.jpg'
-import clareamento from '../../Assets/clareamento.jpg'
-import limpeza from '../../Assets/limpeza_profilaxia.jpg'
-import urgencia from '../../Assets/urgencia.jpg'
-import harmonizacao from '../../Assets/harmonizacao.jpg'
-import lentes_contato from '../../Assets/lentes_contato.jpg'
-import avaliacao from '../../Assets/avaliacao.jpg'
+import React, {useEffect, useState} from 'react';
+import { Spin } from 'antd';
+import { ContainerGrid, ContainerInput, ContainerName, ContainerTitulo, ContainerTimePicker,ContainerButtons, PhoneWhats, ContainerFooter, ContainerCards, ContainerLink, StyleLink, Image } from './styled';
+import { Link, useNavigate } from 'react-router-dom';
 import PhotosAlbum from './photos'
 import symbol from '../../Assets/symbol.webp';
 import symbolRead from '../../Assets/symbol_read.webp';
+import { allActions } from './data/data'
+import ScrollButton from '../../utils/ScroolButton/scroolButton';
 
 export default function HomeIcons (){
 
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
   
+  // function handleWithTypeAction(action){
+  //   setLoading(true);
+  //   navigate("/agenda", {
+  //     state: action
+  //   })
+  //   setLoading(false);
+  // }
+
+  const handleWithTypeAction = (action) => {
+    setLoading(true);
+    navigate('/agenda', {
+      state: action
+    })
+      .then(() => {
+        // Navegação concluída com sucesso
+      })
+      .catch((error) => {
+        // Tratar erros na navegação
+        console.error(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+  
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(true)
+  //   }, 3000);
+  // }, [])
 
   return (
       <ContainerGrid>
+        <Spin spinning={loading} delay={1000} size="large" style={{display: "flex", justifyContent: "center"}}>
+          <div>
         <ContainerTitulo>
-          <img src={symbol}></img>
-          {/* <h1>O que está incomodando você?</h1> */}
-          <h4>Agende seu horário com rapidez e facilidade.</h4>
-          {/* <span>Os melhores dentistas estão aqui na <strong style={{fontSize: '14px'}}>Sorrifácil Souza Naves!</strong></span> */}
+          <img src={symbol} alt='símbolo sorrifacil maringá souza naves' style={{boxShadow: '1px 1px 17px 1px white', borderRadius: '50%'}}></img>
+          {/* <h4>Agende seu horário com rapidez e facilidade.</h4> */}
+          <h4>Transforme seu sorriso hoje mesmo!</h4>
+          {/* Descubra o poder da odontologia moderna na nossa clínica. */}
           <span>Os melhores dentistas estão aqui na</span>
-          <img style={{width: '145px', height: '41px', marginBottom: '10px'}} src={symbolRead}></img>
+          <img style={{width: '145px', height: '41px', marginBottom: '10px'}} 
+            src={symbolRead} 
+            alt='símbolo sorrifacil maringá souza naves'
+          >
+          </img>
         </ContainerTitulo>
-        {/* <Divider/> */}
         <ContainerCards>
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={avaliacao} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px'
-                        }}></img>
-            </StyleLink>
-          </Link>
+            <div style={{display: "flex", justifyContent: "end", marginLeft: "55%", fontSize: "14px"}}>
+              {/* <button>Conheça a cliníca
 
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={clareamento} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px'
-                        }}></img>
-            </StyleLink>
-          </Link>
+              </button> */}
 
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={limpeza} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px'
-                        }}></img>
-            </StyleLink>
-          </Link>
+              <ScrollButton/>
+            </div>
+            {/* {loadingWindow && <div>Carregando..</div>} */}
+            {/* {allActions.map((action) => */}
+            {allActions.map((action) => 
 
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={aparelho_ortodontico} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px'
-                        }}></img>
-            </StyleLink>
-          </Link>
-
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={urgencia} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px'
-                        }}></img>
-            </StyleLink>
-          </Link>
-
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={lentes_contato} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px',
-                        }}></img>
-            </StyleLink>
-          </Link>
-
-          <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={harmonizacao} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px'
-                        }}></img>
-            </StyleLink>
-          </Link>
-
-          {/* <Link to='/agenda' style={{height: '15px'}}>
-            <StyleLink>
-                    <img src={urgencia} style={{
-                          display: 'flex',
-                          width: '350px',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '67px',
-                          border: '2px solid #FFFFFF',
-                          borderRadius: '20px',
-                        }}></img>
-            </StyleLink>
-          </Link> */}
-
+            <button key={action.actions} onClick={() => handleWithTypeAction(action.actions)} 
+              style={{display: 'contents', borderRadius: "20px" }}
+              >
+              <Image
+                src={action.image}>
+              </Image>
+            </button>
+            )}
           <ContainerFooter>
             <PhotosAlbum></PhotosAlbum>
-        </ContainerFooter>
-
+          </ContainerFooter>
+            
         </ContainerCards>
-        
+        </div>
+        </Spin>
       </ContainerGrid>
       
   )}

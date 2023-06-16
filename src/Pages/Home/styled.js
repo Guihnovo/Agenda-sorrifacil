@@ -1,10 +1,13 @@
 import styled from "styled-components"
-
+import imageFundo from "../../Assets/image-fundo.jpeg"
 
 export const ContainerGrid = styled.div`
     display: grid;
-    grid-template-rows: 0.3fr 1fr;
+    grid-template-rows: 1fr;
     background-color: #0485C7;
+    background-image: url('../../Assets/image-fundo.jpeg');
+    background-size: "cover";
+    background-repeat: "no-repeat";
     min-height: 100vh;
 `
 
@@ -13,10 +16,8 @@ export const ContainerTitulo = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #E48100;
     margin-bottom: 28px;
-    border-bottom: 1px solid white;
-    /* margin-left: 20px; */
+
     img {
         width: 50px;
         height: 50px;
@@ -24,9 +25,9 @@ export const ContainerTitulo = styled.div`
     }
 
     h4 {
-        font-family: sans-serif;
+        font-family: roboto;
         font-weight: 700;
-        font-size: 24px;
+        font-size: 32px;
         color: #FFFFFF;
         text-align: center;
         letter-spacing: 2px;
@@ -43,23 +44,44 @@ export const ContainerTitulo = styled.div`
     }
 `
 export const ContainerCards = styled.div`
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
-    gap: 70px;
-    /* justify-content: center; */
+    gap: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 415px){
+        background-image: url(${imageFundo});
+        //background-size: "cover";
+        background-repeat: no-repeat;
+        box-shadow: 25px 22px 61px 10px white;
+        margin: 8px;
+        border-radius: 45px;
+    }
+
+
+    button {
+        :active &:hover {
+            background: "#efefef";
+            box-shadow: 1px 2px 1px 0px whitesmoke;
+        }
+    }
+    
 `
 
 
-export const StyleLink = styled.div`
+export const Image = styled.img`
     display: flex;
-    flex-wrap: wrap;
-    height: 0px;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+    height: 67px;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+
+    :active&:hover {
+        box-shadow: 1px 2px 1px 0px whitesmoke;
+    }
 `
 
 export const ContainerFooter = styled.div`

@@ -1,0 +1,31 @@
+.tabela-consultorio {
+  /* font-family: Arial, sans-serif; */
+  font-variant: tabular-nums;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-consultorio th {
+  background-color: #0485C7;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #cccccc;
+}
+
+.tabela-consultorio td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  color: black;
+  font-variant: tabular-nums;
+}
+
+.titulo {
+  background-color: #fff;
+  color: #0485C7;
+  text-align: center;
+  padding: 10px;
+}
